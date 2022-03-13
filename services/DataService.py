@@ -59,7 +59,7 @@ class DataService:
             self._price_map = data
         return self._price_map
 
-    def save_room_price_info(self):
+    def save_room_price_info(self, room_prices):
         fs = JsonFileService('room_prices.json')
         fs.save_data(self._price_map)
 

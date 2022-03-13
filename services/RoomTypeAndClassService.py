@@ -21,7 +21,7 @@ class RoomTypeAndClassService:
     def __init__(self, dataService: DataService):
         self.dataService = dataService
         self.ROOM_TYPE_CLASS_PRICE_MAP = self.dataService.get_room_price_info() or self.ROOM_TYPE_CLASS_PRICE_MAP
-        self.dataService.save_room_price_info()
+        self.dataService.save_room_price_info(self.ROOM_TYPE_CLASS_PRICE_MAP)
 
     @classmethod
     def get_room_class_for_type(cls, type_name):
