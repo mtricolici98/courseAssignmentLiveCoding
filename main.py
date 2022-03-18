@@ -1,6 +1,6 @@
 from services.DataService import DataService
 from services.UserService import UserService
-from views.MainMenuView import MainMenuView
+from views.cli_view.MainMenuView import MainMenuView
 
 
 def main():

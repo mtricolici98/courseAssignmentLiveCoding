@@ -1,7 +1,3 @@
-from views.auth_views.LoginView import LoginView
-from views.auth_views.RegistrationView import RegistrationView
-
-
 class LogOutView:
 
     def __init__(self, dataService, userSerice):

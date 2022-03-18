@@ -1,5 +1,5 @@
-from views.auth_views.LoginView import LoginView
-from views.auth_views.RegistrationView import RegistrationView
+from views.cli_view.auth_views.LoginView import LoginView
+from views.cli_view.auth_views.RegistrationView import RegistrationView
 
 
 class AuthMenuView:

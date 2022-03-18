@@ -1,5 +1,5 @@
-from views.auth_views.AuthMenuView import AuthMenuView
-from views.user_menus.MainUserMenu import MainUserMenu
+from views.cli_view.auth_views.AuthMenuView import AuthMenuView
+from views.cli_view.user_menus.MainUserMenu import MainUserMenu
 
 
 class MainMenuView:

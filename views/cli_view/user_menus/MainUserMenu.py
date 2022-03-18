@@ -1,6 +1,6 @@
-from views.auth_views.LogOutView import LogOutView
-from views.user_menus.rooms.RoomCreate import RoomCreate
-from views.user_menus.rooms.RoomList import RoomList
+from views.cli_view.auth_views.LogOutView import LogOutView
+from views.cli_view.user_menus.rooms.RoomCreate import RoomCreate
+from views.cli_view.user_menus.rooms.RoomList import RoomList
 
 
 class MainUserMenu:

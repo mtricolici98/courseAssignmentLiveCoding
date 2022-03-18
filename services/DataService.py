@@ -31,7 +31,7 @@ class DataService:
     def get_users(self):
         if self._users:
             return self._users
-        fs = JsonFileService('users.json')
+        fs = JsonFileService('C:\\Users\\mariu\\PycharmProjects\\courseAssignmentLiveCoding\\users.json')
         data = fs.load_data()
         if data:
             self._users = [
@@ -44,7 +44,7 @@ class DataService:
     def get_rooms(self):
         if self._rooms:
             return self._rooms
-        fs = JsonFileService('rooms.json')
+        fs = JsonFileService('C:\\Users\\mariu\\PycharmProjects\\courseAssignmentLiveCoding\\rooms.json')
         data = fs.load_data()
         if data:
             self._rooms = [Room.from_dict(el) for el in data]
@@ -64,7 +64,7 @@ class DataService:
         fs.save_data(self._price_map)
 
     def save_rooms(self):
-        fs = JsonFileService('rooms.json')
+        fs = JsonFileService('C:\\Users\\mariu\\PycharmProjects\\courseAssignmentLiveCoding\\rooms.json')
         fs.save_data([room.to_dict() for room in self._rooms])
 
     def save_bookings(self):

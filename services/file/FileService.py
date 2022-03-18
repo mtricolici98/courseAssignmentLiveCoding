@@ -9,7 +9,7 @@ class FileService:
     def load_from_file(self):
         try:
             return open(self.file_name, 'r').read()
-        except Exception:
+        except Exception as ex:
             return None
 
     def save_to_file(self, data):
