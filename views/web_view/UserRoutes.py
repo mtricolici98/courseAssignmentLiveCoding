@@ -1,4 +1,4 @@
-from flask import request, jsonify, Blueprint
+from flask import request, jsonify, Blueprint, g
 
 from app import app
 from services.DataService import DataService
@@ -30,24 +30,26 @@ def _validate_pass(passwd):
 
 @app.route('/login', methods=['POST'])
 def login():
-    data_service = DataService()
-    user_service = UserService(data_service)
+    ds = DataService()
+    user_service = UserService(ds)
     r_data = request.get_json()
     if not r_data:
         return 'Bad request', 400
     try:
         user_name = r_data.get('user_name')
         password = r_data.get('password')
+        success = user_service.log_in(user_name, password)
+        if not success:
+            raise ValidationError('Did not login')
     except ValidationError as ex:
         return jsonify(str(ex)), 400
-    user_service.log_in(user_name, password)
     return {'header-auth': user_service.logged_in_user.username}, 200
 
 
 @app.route('/register', methods=['POST'])
 def register():
-    data_service = DataService()
-    user_service = UserService(data_service)
+    ds = DataService()
+    user_service = UserService(ds)
     r_data = request.get_json()
     if not r_data:
         return 'Bad request', 400
